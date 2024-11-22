@@ -1,6 +1,6 @@
 name = "ariady-putra-emurgo/aiken_const_showcase"
 version = "0.0.0"
-compiler = "v1.1.5"
+compiler = "v1.1.7"
 plutus = "v3"
 license = "Apache-2.0"
 description = "Aiken contracts for project 'ariady-putra-emurgo/aiken_const_showcase'"
@@ -15,4 +15,41 @@ name = "aiken-lang/stdlib"
 version = "v2.1.0"
 source = "github"
 
-[config]
+# default-environment configurations
+
+[config.default]
+price = 1000000               # pub const price: Int = 1_000_000
+is_mainnet = true             # pub const is_mainnet: Bool = True
+network = "mainnet"           # pub const network: ByteArray = "mainnet"
+quotas = [1, 2, 3]            # pub const quotas: List<Int> = [1, 2, 3]
+asset = ["HOSKY", 42]         # pub const asset: (ByteArray, Int) = ("HOSKY", 42)
+
+[config.default.owner]        # pub const owner: ByteArray = #"0000111122223333"
+bytes = "0000111122223333"
+encoding = "hex"
+
+# environment-2 configurations
+
+[config.mainnet]
+price = 20000000
+is_mainnet = true
+network = "mainnet"
+quotas = [1, 2]
+asset = ["HOSKY", 24]
+
+[config.mainnet.owner]
+bytes = "4444555566667777"
+encoding = "hex"
+
+# environment-3 configurations
+
+[config.testnet]
+price = 300000
+is_mainnet = false
+network = "testnet"
+quotas = [1, 2, 3, 4]
+asset = ["HOSKY", 42]
+
+[config.testnet.owner]
+bytes = "8888999900001111"
+encoding = "hex"

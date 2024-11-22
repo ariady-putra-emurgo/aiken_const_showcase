@@ -18,7 +18,7 @@ pub const key_token = ("PolicyId", "NFT", 1)
 /// - `EAST`
 /// - `WEST`
 ///
-/// ```
+/// ```aiken
 /// and {
 ///   list.at(constants.direction, 0) == Some("NORTH"),
 ///   list.at(constants.direction, 1) == Some("SOUTH"),
